@@ -50,3 +50,4 @@ D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\bin\Debug\net7.0-windows\runtimes\win-x86\na
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\bin\Debug\net7.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Properties.Resources.resources
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.MenuPrincipalcs.resources
+D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Produto.resources

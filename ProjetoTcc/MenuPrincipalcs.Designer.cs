@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             Menu = new GroupBox();
+            cadastro_produto = new Button();
             Fornecedor = new Button();
             Menu.SuspendLayout();
             SuspendLayout();
             // 
             // Menu
             // 
+            Menu.Controls.Add(cadastro_produto);
             Menu.Controls.Add(Fornecedor);
             Menu.Location = new Point(0, 0);
             Menu.Name = "Menu";
@@ -42,6 +44,16 @@
             Menu.TabIndex = 0;
             Menu.TabStop = false;
             Menu.Text = "Menu Principal";
+            // 
+            // cadastro_produto
+            // 
+            cadastro_produto.Location = new Point(11, 58);
+            cadastro_produto.Name = "cadastro_produto";
+            cadastro_produto.Size = new Size(154, 26);
+            cadastro_produto.TabIndex = 1;
+            cadastro_produto.Text = "Cadastro Produto";
+            cadastro_produto.UseVisualStyleBackColor = true;
+            cadastro_produto.Click += cadastro_produto_Click;
             // 
             // Fornecedor
             // 
@@ -69,5 +81,6 @@
 
         private GroupBox Menu;
         private Button Fornecedor;
+        private Button cadastro_produto;
     }
 }

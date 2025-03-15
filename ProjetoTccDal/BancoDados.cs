@@ -126,7 +126,7 @@ namespace ProjetoTccDal
         }
 
 
-        public void InsProduto(int id_produto, string embalagem,int qtd_embalagem,string descricao,float preco)
+        public void InsProduto(int id_produto, string embalagem, int qtd_embalagem,string descricao, float preco, int id_formecedor)
         {
 
             Conectar();
@@ -149,7 +149,7 @@ namespace ProjetoTccDal
                     DbParameter par_qtd_embalagem = cmd.CreateParameter();
                     par_qtd_embalagem.ParameterName = "@QTD_EMBALAGEM";
                     par_qtd_embalagem.Value = qtd_embalagem;
-                    cmdParams.Add(qtd_embalagem);
+                    cmdParams.Add(par_qtd_embalagem);
 
                     DbParameter par_descricao = cmd.CreateParameter();
                     par_descricao.ParameterName = "@DESCRICAO";
@@ -160,6 +160,11 @@ namespace ProjetoTccDal
                     par_preco.ParameterName = "@preco";
                     par_preco.Value = preco;
                     cmdParams.Add(par_preco);
+
+                    DbParameter par_id_formecedor = cmd.CreateParameter();
+                    par_id_formecedor.ParameterName = "@ID_FORNECEDOR";
+                    par_id_formecedor.Value = id_formecedor;
+                    cmdParams.Add(par_id_formecedor);
 
 
                     cmd.CommandText = "ERP_PRODUTOS_INS_PRODUTOS";
@@ -201,21 +206,21 @@ namespace ProjetoTccDal
                             if (!dr.IsDBNull(0))
                                 item.Id_Produto = Convert.ToString(dr[0]);
 
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(1))
                                 item.Descricao = Convert.ToString(dr[1]);
 
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(2))
                                 item.Embalagem = Convert.ToString(dr[2]);
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(3))
                                 item.Qtd_Embalagem = Convert.ToString(dr[3]);
 
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(4))
                                 item.Preco = Convert.ToString(dr[4]);
 
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(5))
                                 item.Id_Fornecedor = Convert.ToString(dr[5]);
 
-                            if (!dr.IsDBNull(0))
+                            if (!dr.IsDBNull(6))
                                 item.Nome = Convert.ToString(dr[6]);
 
                             lst.Add(item);
@@ -234,10 +239,50 @@ namespace ProjetoTccDal
             finally { Finalizar(); }
 
             return lst;
-        } 
+        }
 
 
+        public List<ConsultaFornecdor> listaFornecedor()
+        {
+            List<ConsultaFornecdor> lst = new List<ConsultaFornecdor>();
+            Conectar();
+            try
+            {
 
+                using (DbCommand cmd = sConn.CreateCommand())
+                {
+                    DbParameterCollection cmdParams = cmd.Parameters;
+                    cmd.CommandText = "CosultaFornecedor";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ConsultaFornecdor item = new ConsultaFornecdor();
+
+                            if (!dr.IsDBNull(0))
+                                item.id_fornecedor = Convert.ToString(dr[0]);
+
+                            if (!dr.IsDBNull(1))
+                                item.nome = Convert.ToString(dr[1]);
+
+                            lst.Add(item);
+
+                        }
+                    }
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            finally { Finalizar(); }
+
+            return lst;
+        }
 
 
 

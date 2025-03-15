@@ -24,5 +24,13 @@ namespace ProjetoTcc
             this.Visible = true;
 
         }
+
+        private void cadastro_produto_Click(object sender, EventArgs e)
+        {
+            var produto = new Produto();
+            produto.Show();
+            this.Visible = true;
+
+        }
     }
 }
