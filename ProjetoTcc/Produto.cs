@@ -21,24 +21,31 @@ namespace ProjetoTcc
 
         private void cadastrar_produto_Click(object sender, EventArgs e)
         {
-            BancoDados banco = new BancoDados();
+            try
+            {
+                BancoDados banco = new BancoDados();
 
-            int produto = Convert.ToInt32(idproduto.Text);
-            string emb = embalagem.Text;
-            int qtd_emb = Convert.ToInt32(qtd_embalagem.Text);
-            string desc = descricao.Text;
-            float pr = float.Parse(preco.Text);
-            int fornecedor = Convert.ToInt32(listaFronecedor.SelectedValue);
-            banco.InsProduto(produto, emb, qtd_emb, desc, pr, fornecedor);
+                int produto = Convert.ToInt32(idproduto.Text);
+                string emb = embalagem.Text;
+                int qtd_emb = Convert.ToInt32(qtd_embalagem.Text);
+                string desc = descricao.Text;
+                float pr = float.Parse(preco.Text);
+                int fornecedor = Convert.ToInt32(listaFronecedor.SelectedValue);
+                banco.InsProduto(produto, emb, qtd_emb, desc, pr, fornecedor);
 
 
-            idproduto.Clear();
-            embalagem.Clear();
-            qtd_embalagem.Clear();
-            descricao.Clear();
-            preco.Clear();
+                idproduto.Clear();
+                embalagem.Clear();
+                qtd_embalagem.Clear();
+                descricao.Clear();
+                preco.Clear();
 
-            MessageBox.Show("Produto inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Produto inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

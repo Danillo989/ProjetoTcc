@@ -32,5 +32,12 @@ namespace ProjetoTcc
             this.Visible = true;
 
         }
+
+        private void gridproduto_Click(object sender, EventArgs e)
+        {
+            var grid = new ConsultaProduto();
+            grid.Show();
+            this.Visible = true;
+        }
     }
 }

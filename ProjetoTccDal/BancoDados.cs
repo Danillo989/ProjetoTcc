@@ -185,16 +185,26 @@ namespace ProjetoTccDal
 
 
 
-        public   List<ConsultaProduto> ConsultaProduto()
+        public   List<ConsultaProduto> ConsultaProdutoGrid(string produto)
         {
             List<ConsultaProduto> lst = new List<ConsultaProduto>();
             Conectar();
             try
             {
+
+
                 
                 using (DbCommand cmd = sConn.CreateCommand())
                 {
+                 
+
                     DbParameterCollection cmdParams = cmd.Parameters;
+
+                    DbParameter par_id_produto = cmd.CreateParameter();
+                    par_id_produto.ParameterName = "@PLU";
+                    par_id_produto.Value = produto;
+                    cmdParams.Add(par_id_produto);
+
                     cmd.CommandText = "CONSULTA_PRODUTO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (DbDataReader dr = cmd.ExecuteReader())
@@ -242,6 +252,9 @@ namespace ProjetoTccDal
         }
 
 
+
+
+
         public List<ConsultaFornecdor> listaFornecedor()
         {
             List<ConsultaFornecdor> lst = new List<ConsultaFornecdor>();
@@ -283,6 +296,10 @@ namespace ProjetoTccDal
 
             return lst;
         }
+
+
+
+
 
 
 

@@ -51,3 +51,4 @@ D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\bin\Debug\net7.0-windows\runtimes\win\lib\ne
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Properties.Resources.resources
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.MenuPrincipalcs.resources
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Produto.resources
+D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.ConsultaProduto.resources

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Menu = new GroupBox();
+            gridproduto = new Button();
             cadastro_produto = new Button();
             Fornecedor = new Button();
             Menu.SuspendLayout();
@@ -36,6 +37,7 @@
             // 
             // Menu
             // 
+            Menu.Controls.Add(gridproduto);
             Menu.Controls.Add(cadastro_produto);
             Menu.Controls.Add(Fornecedor);
             Menu.Location = new Point(0, 0);
@@ -45,11 +47,21 @@
             Menu.TabStop = false;
             Menu.Text = "Menu Principal";
             // 
+            // gridproduto
+            // 
+            gridproduto.Location = new Point(3, 111);
+            gridproduto.Name = "gridproduto";
+            gridproduto.Size = new Size(154, 35);
+            gridproduto.TabIndex = 1;
+            gridproduto.Text = "Consulta Produto";
+            gridproduto.UseVisualStyleBackColor = true;
+            gridproduto.Click += gridproduto_Click;
+            // 
             // cadastro_produto
             // 
-            cadastro_produto.Location = new Point(11, 58);
+            cadastro_produto.Location = new Point(0, 69);
             cadastro_produto.Name = "cadastro_produto";
-            cadastro_produto.Size = new Size(154, 26);
+            cadastro_produto.Size = new Size(154, 36);
             cadastro_produto.TabIndex = 1;
             cadastro_produto.Text = "Cadastro Produto";
             cadastro_produto.UseVisualStyleBackColor = true;
@@ -57,9 +69,9 @@
             // 
             // Fornecedor
             // 
-            Fornecedor.Location = new Point(3, 21);
+            Fornecedor.Location = new Point(0, 24);
             Fornecedor.Name = "Fornecedor";
-            Fornecedor.Size = new Size(162, 23);
+            Fornecedor.Size = new Size(154, 39);
             Fornecedor.TabIndex = 0;
             Fornecedor.Text = "Cadastro Fornecedor";
             Fornecedor.UseVisualStyleBackColor = true;
@@ -82,5 +94,6 @@
         private GroupBox Menu;
         private Button Fornecedor;
         private Button cadastro_produto;
+        private Button gridproduto;
     }
 }
