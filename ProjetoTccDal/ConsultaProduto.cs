@@ -17,7 +17,8 @@ namespace ProjetoTccDal
         public string Preco { get; set; }
         public string Id_Fornecedor { get; set; }
         public string Nome { get; set; }
-        
+        public string Estoque { get; set; }
+
 
 
 

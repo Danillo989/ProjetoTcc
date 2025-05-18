@@ -52,3 +52,4 @@ D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Properti
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.MenuPrincipalcs.resources
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.Produto.resources
 D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.ConsultaProduto.resources
+D:\ProjetoTcc\ProjetoTcc\ProjetoTcc\obj\Debug\net7.0-windows\ProjetoTcc.TelaCompras.resources

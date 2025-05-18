@@ -32,11 +32,13 @@
             gridproduto = new Button();
             cadastro_produto = new Button();
             Fornecedor = new Button();
+            Compras = new Button();
             Menu.SuspendLayout();
             SuspendLayout();
             // 
             // Menu
             // 
+            Menu.Controls.Add(Compras);
             Menu.Controls.Add(gridproduto);
             Menu.Controls.Add(cadastro_produto);
             Menu.Controls.Add(Fornecedor);
@@ -49,7 +51,7 @@
             // 
             // gridproduto
             // 
-            gridproduto.Location = new Point(3, 111);
+            gridproduto.Location = new Point(3, 127);
             gridproduto.Name = "gridproduto";
             gridproduto.Size = new Size(154, 35);
             gridproduto.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // cadastro_produto
             // 
-            cadastro_produto.Location = new Point(0, 69);
+            cadastro_produto.Location = new Point(0, 85);
             cadastro_produto.Name = "cadastro_produto";
             cadastro_produto.Size = new Size(154, 36);
             cadastro_produto.TabIndex = 1;
@@ -69,13 +71,23 @@
             // 
             // Fornecedor
             // 
-            Fornecedor.Location = new Point(0, 24);
+            Fornecedor.Location = new Point(0, 40);
             Fornecedor.Name = "Fornecedor";
             Fornecedor.Size = new Size(154, 39);
             Fornecedor.TabIndex = 0;
             Fornecedor.Text = "Cadastro Fornecedor";
             Fornecedor.UseVisualStyleBackColor = true;
             Fornecedor.Click += Fornecedor_Click;
+            // 
+            // Compras
+            // 
+            Compras.Location = new Point(3, 168);
+            Compras.Name = "Compras";
+            Compras.Size = new Size(152, 38);
+            Compras.TabIndex = 2;
+            Compras.Text = "Tela de Compras ";
+            Compras.UseVisualStyleBackColor = true;
+            Compras.Click += Compras_Click;
             // 
             // MenuPrincipalcs
             // 
@@ -95,5 +107,6 @@
         private Button Fornecedor;
         private Button cadastro_produto;
         private Button gridproduto;
+        private Button Compras;
     }
 }

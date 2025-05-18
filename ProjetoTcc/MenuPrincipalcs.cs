@@ -39,5 +39,14 @@ namespace ProjetoTcc
             grid.Show();
             this.Visible = true;
         }
+
+        private void Compras_Click(object sender, EventArgs e)
+        {
+            var grid = new TelaCompras();
+            grid.Show();
+            this.Visible = true;
+            
+
+        }
     }
 }

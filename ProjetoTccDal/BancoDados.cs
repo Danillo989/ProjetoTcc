@@ -299,6 +299,118 @@ namespace ProjetoTccDal
 
 
 
+        public List<ConsultaProduto> ConsultaFornecedorCompraGrid(int fornecedor)
+        {
+            List<ConsultaProduto> lst = new List<ConsultaProduto>();
+            Conectar();
+            try
+            {
+
+
+
+                using (DbCommand cmd = sConn.CreateCommand())
+                {
+
+
+                    DbParameterCollection cmdParams = cmd.Parameters;
+
+                    DbParameter par_id_produto = cmd.CreateParameter();
+                    par_id_produto.ParameterName = "@FORNECEDOR";
+                    par_id_produto.Value = fornecedor;
+                    cmdParams.Add(par_id_produto);
+
+                    cmd.CommandText = "CONSULTA_COMPRA";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ConsultaProduto item = new ConsultaProduto();
+
+                            if (!dr.IsDBNull(0))
+                                item.Id_Produto = Convert.ToString(dr[0]);
+
+                            if (!dr.IsDBNull(1))
+                                item.Descricao = Convert.ToString(dr[1]);
+
+                            if (!dr.IsDBNull(2))
+                                item.Embalagem = Convert.ToString(dr[2]);
+                            if (!dr.IsDBNull(3))
+                                item.Qtd_Embalagem = Convert.ToString(dr[3]);
+
+                            if (!dr.IsDBNull(4))
+                                item.Preco = Convert.ToString(dr[4]);
+
+                            if (!dr.IsDBNull(5))
+                                item.Id_Fornecedor = Convert.ToString(dr[5]);
+
+                            if (!dr.IsDBNull(6))
+                                item.Nome = Convert.ToString(dr[6]);
+
+                            if (!dr.IsDBNull(7))
+                                item.Estoque = Convert.ToString(dr[7]);
+
+                            lst.Add(item);
+
+                        }
+                    }
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            finally { Finalizar(); }
+
+            return lst;
+        }
+
+
+        public void InsEstoque(int id_produto,int estoque )
+        {
+
+            Conectar();
+            try
+            {
+                using (DbCommand cmd = sConn.CreateCommand())
+                {
+                    DbParameterCollection cmdParams = cmd.Parameters;
+
+                    DbParameter par_id_produto = cmd.CreateParameter();
+                    par_id_produto.ParameterName = "@ID_PRODUTO";
+                    par_id_produto.Value = id_produto;
+                    cmdParams.Add(par_id_produto);
+
+                    DbParameter par_estoque = cmd.CreateParameter();
+                    par_estoque.ParameterName = "@ESTOQUE";
+                    par_estoque.Value = estoque;
+                    cmdParams.Add(par_estoque);
+
+
+
+                    cmd.CommandText = "INS_ESTOQUE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+
+            Finalizar();
+        }
+
+
+
+
+
 
 
 
